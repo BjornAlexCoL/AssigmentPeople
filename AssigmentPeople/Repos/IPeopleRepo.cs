@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using AssignmentPeople.Models;
 
-namespace AssigmentPeople.Repos
+namespace AssignmentPeople.Repos
 {
     interface IPeopleRepo
     {
+        Person Create(Person person);
+        List<Person> read();
+        Person Read(int id);
+        bool Update(Person person);
+        bool Delete(Person person);
     }
 }

@@ -1,11 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AssignmentPeople.Models;
 
-namespace AssigmentPeople.Repos
+namespace AssignmentPeople.Repos
 {
-    interface InMemoryPeopleRepo
+    public class InMemoryPeopleRepo : IPeopleRepo
     {
+        private static List<Person> persons;
+        private static int idCounter;
+        public Person Create(Person person)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(Person person)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Person> read()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Person Read(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Update(Person person)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
