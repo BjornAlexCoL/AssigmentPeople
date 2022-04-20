@@ -6,31 +6,35 @@ namespace AssignmentPeople.Repos
 {
     public class InMemoryPeopleRepo : IPeopleRepo
     {
-        private static List<Person> persons;
+        private static List<Person> persons=new List<Person>();
         private static int idCounter;
         public Person Create(Person person)
         {
-            throw new NotImplementedException();
+            Person newPerson = new Person() { Id = ++idCounter, Name = person.Name, PhoneNumber = person.PhoneNumber, CityName = person.CityName };
+            persons.Add(newPerson);
+            return newPerson;
         }
 
         public bool Delete(Person person)
         {
-            throw new NotImplementedException();
+            return persons.Remove(person);
         }
 
         public List<Person> read()
         {
-            throw new NotImplementedException();
+            return persons;
         }
 
         public Person Read(int id)
         {
-            throw new NotImplementedException();
+            return persons.Find(x => x.Id == id);
         }
 
         public bool Update(Person person)
         {
-            throw new NotImplementedException();
+            bool success=persons.Remove(Read(person.Id));
+            if (success) persons.Add(person);
+            return success;
         }
     }
 }
