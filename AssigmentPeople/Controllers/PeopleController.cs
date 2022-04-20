@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AssigmentPeople.Controllers
 {
-    public class HomeController : Controller
+    public class PeopleController : Controller
     {
         public IActionResult Index()
         {
