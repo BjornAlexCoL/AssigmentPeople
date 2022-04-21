@@ -1,4 +1,26 @@
-﻿@page
-@model AssignmentPeople.Views.Home.IndexModel
+﻿@model List<Person>
 @{
+    ViewData["Title"] = "Person - Index";
 }
+
+<h1>Person Index</h1>
+
+<a asp-action="Create">Add a new Person</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Person person in Model)
+        {
+            <tr>
+                <td>@person.Name</td>
+                <td>@person.CityName</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,38 +1,45 @@
 ﻿using System.Collections.Generic;
 using AssignmentPeople.Models;
+using AssignmentPeople.Repos;
 using AssignmentPeople.Views.People;
 
 namespace AssignmentPeople.Services
 {
     public class PeopleService : IPeopleService
     {
+        InMemoryPeopleRepo people = new InMemoryPeopleRepo();
+
         public Person Add(CreatePersonViewModel person)
         {
-            throw new System.NotImplementedException();
+            return people.Create(new Person { Name = person.Name, PhoneNumber = person.PhoneNumber, CityName = person.CityName });
         }
 
         public List<Person> All()
         {
-            throw new System.NotImplementedException();
+            return people.Read();
         }
 
         public bool Edit(int id, CreatePersonViewModel person)
         {
-            throw new System.NotImplementedException();
+            bool success = Remove(id);           
+            if (success) Add(person);
+            return success;
         }
 
         public Person FindById(int id)
         {
-            throw new System.NotImplementedException();
+            return people.Read(id);
         }
 
         public bool Remove(int id)
         {
-            throw new System.NotImplementedException();
+            return people.Delete(FindById(id));
+
         }
 
         public List<Person> Search(string search)
         {
+           // persons.
             throw new System.NotImplementedException();
         }
     }
