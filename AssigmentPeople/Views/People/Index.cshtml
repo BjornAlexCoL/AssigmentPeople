@@ -5,7 +5,7 @@
 
 <h1>Person Index</h1>
 
-<a asp-action="Create">Add a new Person</a>
+<a asp-action="Create">Add new Person</a>
 
 <table>
     <thead>
@@ -20,6 +20,7 @@
             <tr>
                 <td>@person.Name</td>
                 <td>@person.CityName</td>
+                <td><a asp-action="Details" asp-route-id="@person.Id">Details</a></td>
             </tr>
         }
     </tbody>

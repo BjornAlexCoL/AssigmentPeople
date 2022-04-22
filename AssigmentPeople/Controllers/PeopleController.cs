@@ -35,10 +35,11 @@ namespace AssignmentPeople.Controllers
             }
             return View(createPerson);
         }
-        [HttpPost]
-        public IActionResult Detail(int id)
+        [HttpGet]
+        public IActionResult Details(int id)
         {
             return View(peopleService.FindById(id));
         }
     }
+
 }
