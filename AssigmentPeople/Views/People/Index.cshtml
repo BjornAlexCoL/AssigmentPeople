@@ -4,6 +4,10 @@
 }
 
 <h1>Person Index</h1>
+<form asp-action="Index" method="post">
+    <input type="text" name="search" />
+    <button type="Submit">Search Person</button>
+</form>
 
 <a asp-action="Create">Add new Person</a>
 
@@ -24,4 +28,10 @@
             </tr>
         }
     </tbody>
+
+
 </table>
+@if (ViewBag.Message != "Search")
+{
+    <a asp-action="Index">Show All</a>
+}

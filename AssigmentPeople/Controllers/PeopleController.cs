@@ -15,7 +15,14 @@ namespace AssignmentPeople.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            ViewBag.Message = "Search";
             return View(peopleService.All());
+        }
+
+        [HttpPost]
+        public IActionResult Index(string search)
+        {
+            return View(peopleService.Search(search));
         }
 
         [HttpGet]
@@ -40,6 +47,18 @@ namespace AssignmentPeople.Controllers
         {
             return View(peopleService.FindById(id));
         }
+
+        [HttpPost]
+        public IActionResult Details(Person person)
+        {
+            if (peopleService.Remove(person.Id))
+            {
+            ViewBag.Message = "Person deleted from list";
+            }
+
+            return View();
+        }
+        
     }
 
 }

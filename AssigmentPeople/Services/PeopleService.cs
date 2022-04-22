@@ -38,8 +38,15 @@ namespace AssignmentPeople.Services
 
         public List<Person> Search(string search)
         {
-           // persons.
-            throw new System.NotImplementedException();
+            List<Person> searchResult = new List<Person>();
+            foreach(Person person in people.Read())
+            {
+                if(person.Name.Contains(search)||person.PhoneNumber.Contains(search) || person.CityName.Contains(search))
+                {
+                    searchResult.Add(person);
+                }
+            } 
+            return searchResult;
         }
     }
 }
