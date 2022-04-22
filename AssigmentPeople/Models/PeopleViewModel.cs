@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace AssignmentPeople.Views.People
-{
+namespace AssignmentPeople.Models
+{ 
     public class PeopleViewModel
     {
         public string Name { get; set; }

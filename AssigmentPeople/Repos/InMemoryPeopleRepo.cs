@@ -13,7 +13,6 @@ namespace AssignmentPeople.Repos
         {
             if (persons.Count == 0)
             {
-                Person addedPerson;
                 persons.Add(new Person() { Id = ++idCounter, Name = "Björn", PhoneNumber = "", CityName = "Karlskrona" });
                 persons.Add(new Person() { Id = ++idCounter, Name = "Kalle", PhoneNumber = "", CityName = "Stockholm" });
                 persons.Add(new Person() { Id = ++idCounter, Name = "Evert", PhoneNumber = "", CityName = "Karlskrona" });

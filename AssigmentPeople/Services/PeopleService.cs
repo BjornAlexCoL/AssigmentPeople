@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using AssignmentPeople.Models;
 using AssignmentPeople.Repos;
-using AssignmentPeople.Views.People;
 
 namespace AssignmentPeople.Services
 {

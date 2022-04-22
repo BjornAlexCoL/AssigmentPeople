@@ -1,5 +1,5 @@
-﻿using AssignmentPeople.Services;
-using AssignmentPeople.Views.People;
+﻿using AssignmentPeople.Models;
+using AssignmentPeople.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AssignmentPeople.Controllers
@@ -34,6 +34,11 @@ namespace AssignmentPeople.Controllers
                 return RedirectToAction("Index");
             }
             return View(createPerson);
+        }
+        [HttpPost]
+        public IActionResult Detail(int id)
+        {
+            return View(peopleService.FindById(id));
         }
     }
 }

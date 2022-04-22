@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AssignmentPeople.Views.People
+namespace AssignmentPeople.Models
 {
     public class CreatePersonViewModel
     {
