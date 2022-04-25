@@ -33,7 +33,7 @@ namespace AssignmentPeople.Services
         public bool Remove(int id)
         {
             return people.Delete(FindById(id));
-
+            
         }
 
         public List<Person> Search(string search)

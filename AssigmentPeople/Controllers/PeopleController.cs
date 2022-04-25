@@ -48,15 +48,12 @@ namespace AssignmentPeople.Controllers
             return View(peopleService.FindById(id));
         }
 
-        [HttpPost]
-        public IActionResult Details(Person person)
+        [HttpGet]
+        public IActionResult Delete(Person person)
         {
-            if (peopleService.Remove(person.Id))
-            {
-            ViewBag.Message = "Person deleted from list";
-            }
+            peopleService.Remove(person.Id);
 
-            return View();
+            return RedirectToAction("Details");
         }
         
     }
