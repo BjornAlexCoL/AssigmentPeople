@@ -1,0 +1,11 @@
+﻿body {
+}
+div {
+    display:list-item;
+}
+#divrow {
+    display:list-item;
+}
+#divcol {
+    display: inline;
+}

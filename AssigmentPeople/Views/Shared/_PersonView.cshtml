@@ -1,0 +1,6 @@
+﻿@model Person
+<div>
+    <div id="divcol">@Model.Name</div>
+    <div id="divcol">@Model.CityName</div>
+    <div id="divcol"><a asp-action="Details" asp-route-id="@Model.Id">Details</a></div">
+</div>
