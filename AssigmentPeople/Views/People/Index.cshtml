@@ -3,19 +3,30 @@
     ViewData["Title"] = "Person - Index";
 }
 
-<h1>Person Index</h1>
-<form asp-action="Index" method="post">
-    <input type="text" name="search" />
-    <button type="Submit">Search Person</button>
+<h1>Person Index </h1>
+<input type="checkbox" id="casesensitve" name="casesensitive"/>
+<label for="casesensitive">Case Sensitive</label>
+<input type="radio" id="contains" name="searchtype" value="contains" checked />
+<label for="name">contains</label>
+<input type="radio" id="exact" name="searchtype" value="exact" />
+<label for="city">exact    </label>
+<input type="radio" id="name" name="searchby" value="name" checked />
+<label for="name">Name</label>
+<input type="radio" id="city" name="searchby" value="city" />
+<label for="city">City    </label>
+<input type="text" id="searchfor" name="search" />
+<button onclick="Search()">Search</button>
+<button onclick="SortList()">Sort List</button>
+<button onclick="SortListReversed()">Sort List Reversed</button>
+<form asp-action="Create">
+<button type="submit">Add new Person</button>
 </form>
-
-<a asp-action="Create">Add new Person</a>
-
 <table>
     <thead>
         <tr>
             <th>Name</th>
             <th>City</th>
+            <th>Link</th>
         </tr>
     </thead>
     <tbody>
@@ -35,3 +46,5 @@
 {
     <a asp-action="Index">Show All</a>
 }
+
+    
